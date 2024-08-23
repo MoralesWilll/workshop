@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event Form</title>
+</head>
+<body>
+<h1 th:text="${event.id == null ? 'Create Event' : 'Edit Event'}"></h1>
+<form th:action="@{/events/create}" th:object="${event}" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" />
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    </div>
+    <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" th:field="*{date}" />
+        <div th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" th:field="*{location}" />
+        <div th:if="${#fields.hasErrors('location')}" th:errors="*{location}"></div>
+    </div>
+    <div>
+        <label for="capacity">Capacity:</label>
+        <input type="number" id="capacity" th:field="*{capacity}" />
+        <div th:if="${#fields.hasErrors('capacity')}" th:errors="*{capacity}"></div>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+<a href="/events">Back to events list</a>
+</body>
+</html>

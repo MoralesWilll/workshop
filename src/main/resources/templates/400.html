@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>400 - Bad Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>400 - Bad Request</h1>
+<p>It looks like there was an issue with your request. The events need to have all fields filled, the date must be in the future and the capacity must be a positive number.</p>
+<p>Please again with correct information.</p>
+<a href="/events">Return to Home Page</a>
+</body>
+</html>
